@@ -196,7 +196,10 @@ public class Player : MonoBehaviour
         curHP = maxHP;
         healthSlider.value = curHP;
 
+
         transform.position = base_.transform.position;
+        isOnField = false;
+        isOnBase = true;
 
         gameObject.SetActive(true);
 
@@ -242,6 +245,7 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("Field"))
         {
+            Debug.Log(1);
             isOnField = false;
             spawner.PlayerOnBase();
         }
@@ -250,5 +254,8 @@ public class Player : MonoBehaviour
         {
             isOnBase = false;
         }
+
+
+        
     }
 }
